@@ -28,17 +28,12 @@ CI.Module.prototype._types.canvas_matrix.View.prototype = {
 		
 		this._domTitle = title;
 		
-		var table = document.createElement("table");
-		var tr = document.createElement("tr");
-		var td = document.createElement("td");
+		var containerDiv = document.createElement("div");
 		
 		this.dom.appendChild(title);
-		this.dom.appendChild(table);
+		this.dom.appendChild(containerDiv);
 		
-		table.appendChild(tr);
-		tr.appendChild(td);
-		
-		td.appendChild(this.canvas);
+		containerDiv.appendChild(this.canvas);
 
 		this.module.getDomContent().html(this.dom);
 		
@@ -56,7 +51,7 @@ CI.Module.prototype._types.canvas_matrix.View.prototype = {
 		
 		var height = this.module.getDomContent().parent().height() - this.module.getDomContent().find('h3').outerHeight(true);
 		
-		var table = this.module.getDomContent().find('table').height(height);
+		var table = this.module.getDomContent().find('div').height(height);
 		// Set the canvas to full width and height
 		var moduleWidth = table.width();
 		var moduleHeight = table.height();
