@@ -3,20 +3,35 @@
 	padding: 5px;
 }
 
-.ci-module-datamatrix_intersect table {
+.ci-module-datamatrix_intersect dl {
 	width: 100%;
+	padding-left:0;
 	margin-bottom: 15px;
+	list-style:none;
+}
+.ci-module-datamatrix_intersect dl dd {
+	margin:0;
+	display:inline;
 }
 
-.ci-module-datamatrix_intersect th {
-	text-align: left;
+.ci-module-datamatrix_intersect dl dd img {
+	vertical-align: middle;
+}
+
+.ci-module-datamatrix_intersect dl>div {
+	font-weight:bold;
 	font-size: 12px;
 	padding-bottom: 5px;
+	margin:0;
+	margin-left:5px;
 }
 
 
-.ci-module-datamatrix_intersect td.ci-label {
-	width: 30%;
+.ci-module-datamatrix_intersect dt {
+	min-height:20px;
+	font-weight:bold;
 	text-align: right;
 	padding-right: 5px;
+	margin-left:10px;
+	display:inline-block;
 }

@@ -1,6 +1,13 @@
-
-.ci-module-canvas_matrix .ci-module-content div {
+.ci-module-canvas_matrix .ci-module-content h3 {
+	text-align: center;
+	margin: 0px;
+	padding: 3px 0;
+}
+.ci-module-canvas_matrix .ci-module-content #canvas-container {
 	width: 100%;
 	height: 100%;
 	text-align: center;
+}
+
+.ci-module-canvas_matrix .ci-module-content #canvas-container canvas{
 }

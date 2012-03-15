@@ -29,6 +29,7 @@ CI.Module.prototype._types.canvas_matrix.View.prototype = {
 		this._domTitle = title;
 		
 		var containerDiv = document.createElement("div");
+		containerDiv.id = "canvas-container";
 		
 		this.dom.appendChild(title);
 		this.dom.appendChild(containerDiv);

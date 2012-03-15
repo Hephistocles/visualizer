@@ -33,6 +33,9 @@ CI.API.getModulesFromSharedVar = function(varName) {
 	var allModules = {}, source = [];
 	
 	for(var i in CI.modules) {
+		if (!CI.modules.hasOwnProperty(i))
+			continue; 
+			
 		source = CI.modules[i].definition.dataSource;
 	
 		for(var j = 0; j < source.length; j++) {

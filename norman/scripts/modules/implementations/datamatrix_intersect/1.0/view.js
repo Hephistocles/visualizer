@@ -21,7 +21,12 @@ CI.Module.prototype._types.datamatrix_intersect.View.prototype = {
 	},
 	
 	onResize: function() {
-		
+		var rowLabels = this.getDom().find('dt');
+		rowLabels.css({width:"auto"});
+		var maxLabelWidth = Math.max.apply( null, rowLabels.map( function () {
+				return $( this ).outerWidth( true );
+			}).get());
+		rowLabels.css({width:maxLabelWidth+"px"});
 	},
 	
 	update: function() {
@@ -31,25 +36,25 @@ CI.Module.prototype._types.datamatrix_intersect.View.prototype = {
 		
 		for(var i in moduleValue) {
 			
-			html.push('<table class="ci-intersect ci-intersect-' + i + '">');
+			html.push('<dl class="ci-intersect ci-intersect-' + i + '">');
 			
-			html.push('<tr><th colspan="2">');
+			html.push('<div>');
 			html.push(this.getLabel(i));
-			html.push('</th></tr>');
+			html.push('</div>');
 			
 			for(var j in moduleValue[i]) {
-				html.push('<tr><td class="ci-label">');
+				html.push('<dt>');
 				html.push(this.getLabel(j));
-				html.push('</td><td>');
+				html.push('</dt><dd>');
 				html.push(CI.toScreen(moduleValue[i][j], j, this));
-				html.push('</td></tr>');
+				html.push('</dd><br/>');
 			}
 			
-			html.push('</table>');
+			html.push('</dl>');
 		}
 		
 		this.getDom().html(html.join(''));
-		
+		this.onResize();
 		CI.Grid.checkModuleSize(this.module);
 	},
 	

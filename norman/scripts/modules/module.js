@@ -7,10 +7,19 @@
  */
 
 /**
- * modules is a HashMap, mapping module.id to the module
+ * ModuleList is a HashMap, mapping module.id to the module
+ * @class
  * @see example in init.js
  */
-CI.modules = {};
+CI.ModuleList = function() {}
+CI.ModuleList.prototype.count= function() {
+	var count = 0;
+	for (k in this) if (this.hasOwnProperty(k)) count++;
+	return count;
+}
+CI.modules = new CI.ModuleList();
+
+
 
 /**
  * Creates a new base Module
